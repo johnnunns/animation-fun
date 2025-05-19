@@ -1,15 +1,16 @@
+import { Route, Routes } from 'react-router';
+import Home from './routes/Home';
+import Layout from './components/Layout';
+import Discord from './routes/Discord';
+
 function App() {
   return (
-    <main className="flex gap-1">
-      <div className="bg-sidebar">test</div>
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-[20px] max-w-[1200px] mx-auto">
-        <div>test</div>
-        <div>test</div>
-        <div>test</div>
-        <div>test</div>
-        <div>test</div>
-      </div>
-    </main>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="discord" element={<Discord />} />
+      </Route>
+    </Routes>
   );
 }
 

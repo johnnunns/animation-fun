@@ -2,21 +2,52 @@
 
 @theme {
   --color-blurple-500: #5865f2;
-  --color-green-500: #57f287;
-  --color-yellow-500: #fee75c;
   --color-fuchsia-500: #eb459e;
-  --color-red-500: #ed4245;
+  --color-discord-purple: #5865f3;
 
-  --color-background: #2b2d31;
-  --color-card: #1e1f22;
-  --color-sidebar: #1e1f22;
-  --color-hover: #36393f;
-  --color-accent: #4e5058;
-  --color-text: #f2f3f5;
+  --color-background: #1a1a1e;
+  --color-card-top: #242429;
+  --color-card-bottom: #28282d;
+  --color-sidebar: #121214;
+  --color-hover: #27272a;
+  --color-border: #3f3f46;
 
   --font-sans: 'gg sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  --animate-bounce-slow: bounce 2s infinite;
+  --animate-fade-in: fadeIn 2s ease-in-out forwards;
+  --animate-pulse-red: pulseRed 1s infinite;
+  --animate-twinkle: twinkle 1s infinite;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes pulseRed {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+  @keyframes twinkle {
+    0%,
+    100% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
 }
 
 body {
-  @apply bg-background text-text font-sans min-h-screen antialiased;
+  @apply bg-background text-white font-sans min-h-screen antialiased;
 }
