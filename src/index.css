@@ -1,0 +1,22 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-blurple-500: #5865f2;
+  --color-green-500: #57f287;
+  --color-yellow-500: #fee75c;
+  --color-fuchsia-500: #eb459e;
+  --color-red-500: #ed4245;
+
+  --color-background: #2b2d31;
+  --color-card: #1e1f22;
+  --color-sidebar: #1e1f22;
+  --color-hover: #36393f;
+  --color-accent: #4e5058;
+  --color-text: #f2f3f5;
+
+  --font-sans: 'gg sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+  @apply bg-background text-text font-sans min-h-screen antialiased;
+}
