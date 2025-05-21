@@ -10,7 +10,7 @@ const Discord = () => {
           the Discord Shop. Hover to see animations. WCAG compliant.
         </p>
       </div>
-      <Cards />;
+      <Cards />
     </div>
   );
 };
