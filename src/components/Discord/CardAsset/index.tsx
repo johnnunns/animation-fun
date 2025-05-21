@@ -1,8 +1,9 @@
 import type { CardData } from '../mocks/cardData';
 import CenteredAvatar from './CenteredAvatar';
+import RightSideAvatar from './RightSideAvatar';
 
-const CardAsset = ({ type, asset }: Partial<CardData>) => {
-  if (!type || !asset) {
+const CardAsset = ({ type, assets }: Partial<CardData>) => {
+  if (!type || !assets) {
     return null;
   }
 
@@ -10,12 +11,13 @@ const CardAsset = ({ type, asset }: Partial<CardData>) => {
 
   switch (type) {
     case 'center':
-      component = <CenteredAvatar asset={asset} />;
+      component = <CenteredAvatar assets={assets} />;
       break;
-    // case 'right':
-    //   return <RightSideAvatar asset={asset} />;
+    case 'right':
+      component = <RightSideAvatar assets={assets} />;
+      break;
     // case 'left':
-    //   return <LeftSideAvatar asset={asset} />;
+    //   return <LeftSideAvatar assets={assets} />;
     default:
       component = null;
   }

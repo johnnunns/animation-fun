@@ -7,8 +7,8 @@ const Cards = () => {
   return (
     <div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] auto-rows-[400px] gap-[20px]">
       {mockData.map((item: CardData) => (
-        <CardContainer key={item.id}>
-          <CardAsset type={item.type} asset={item.asset} />
+        <CardContainer key={item.id} tabIndex={0}>
+          <CardAsset type={item.type} assets={item.assets} />
           <CardDescription
             title={item.title}
             originalPrice={`$${item.originalPrice.toFixed(2)}`}

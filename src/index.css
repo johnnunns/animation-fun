@@ -1,9 +1,9 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-blurple-500: #5865f2;
-  --color-fuchsia-500: #eb459e;
-  --color-discord-purple: #5865f3;
+  --color-discord-green-500: #53ac66;
+  --color-discord-purple-500: #5865f3;
+  --color-discord-purple-700: #4654c0;
 
   --color-background: #1a1a1e;
   --color-card-top: #242429;

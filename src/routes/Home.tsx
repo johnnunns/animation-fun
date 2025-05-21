@@ -1,5 +1,7 @@
+import Lander from '../components/Home/Lander';
+
 const Home = () => {
-  return <div>Home</div>;
+  return <Lander />;
 };
 
 export default Home;

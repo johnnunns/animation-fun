@@ -1,26 +1,39 @@
 import DiscordDefaultAvatar from '../../../images/discord_default_avatar.png';
-import UserAvatar from '../../../images/wumpus_avatar.png';
-import type { Asset } from '../mocks/cardData';
+import UserAvatar from '../../../images/wumpus_wave.png';
+import type { Assets } from '../mocks/cardData';
 
-const CenteredAvatar = ({ asset }: { asset: Asset }) => {
+const CenteredAvatar = ({ assets }: { assets: Assets }) => {
+  const { avatarOverlayStatic, avatarOverlayAnimated } = assets ?? {};
+
   return (
-    <div className="group w-36 h-36 rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-      {/* Default Avatar */}
+    <div className="w-46 h-46 rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <img
         src={DiscordDefaultAvatar}
-        className="w-full h-full object-cover opacity-90 rounded-full transition-opacity duration-400 group-hover:opacity-0"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[75%] h-[75%] object-cover opacity-90 rounded-full transition-opacity duration-400 group-hover:opacity-0"
         alt="Default Avatar"
       />
 
-      {/* User Avatar */}
       <img
         src={UserAvatar}
-        className="absolute top-0 left-0 w-full h-full object-cover opacity-0 rounded-full transition-opacity duration-800 group-hover:opacity-100"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[75%] h-[75%] object-cover opacity-0 rounded-full transition-opacity duration-800 group-hover:opacity-100"
         alt="User Avatar"
       />
 
-      {/* Animated Overlay Icon */}
-      {asset && <div className={`pointer-events-none ${asset.animationClass}`}>{asset.overlayIcon}</div>}
+      {avatarOverlayStatic && (
+        <img
+          src={avatarOverlayStatic}
+          className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full object-contain opacity-100 transition-opacity duration-300 group-hover:opacity-0"
+          alt="Avatar Overlay Static"
+        />
+      )}
+
+      {avatarOverlayAnimated && (
+        <img
+          src={avatarOverlayAnimated}
+          className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full object-contain opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+          alt="Avatar Overlay Animated"
+        />
+      )}
     </div>
   );
 };
